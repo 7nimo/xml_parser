@@ -10,12 +10,29 @@ use zip::ZipArchive;
 
 use encoding_rs_io::DecodeReaderBytes;
 
-use quick_xml::{
-    events::Event,
-    Reader,
-};
+use quick_xml::{Reader, events::{BytesStart, Event}};
 
 const BUF_SIZE: usize = 4096; // 4kb at once
+
+struct Hotel {
+    id: u32,
+    region_id: u16,
+    country_id: u16,
+    city_id: u16,
+    standard: u8
+}
+
+// fn read_id(ev: Event) -> &str {
+//     match ev {
+//         Event::Start(e) => match e.local_name() {
+//             b"hotel" => {
+//                 let value = str::from_utf8(&e.attributes().nth(0).unwrap().unwrap().value).unwrap();
+//                 return value;
+//             }
+//         }
+        
+//     }
+// }
 
 fn main() -> Result<(), Box<dyn Error>> {
     let path = env::args().nth(1).ok_or("no filename provided")?;
@@ -37,25 +54,12 @@ fn main() -> Result<(), Box<dyn Error>> {
             Event::Start(e) => match e.local_name() {
 
                 b"hotel" => {
-                    println!("start {}", str::from_utf8(e.local_name())?);
-
-
-                    // todo: if has attributes, execute for below
-                    println!("id: {:?}", str::from_utf8(&e.attributes().nth(0).unwrap().unwrap().value).unwrap())
-
-                    // ? in case more than one attribute needed
-                    // let attributes =  e.attributes();
-                    // let mut count = 0;
-                    // for attr in attributes {
-                    //     count += 1;
-                    //     println!("{}: ", count);
-                    //     // todo: extract first attr instead of looping
-                    //     let key = str::from_utf8(&attr.key).unwrap();
-                    //     if key.eq("id")  {
-                    //         print!("Id: {:?}\n", str::from_utf8(&attr.value).unwrap());
-                    //     }
-                    // }
+                    println!("id: {:?}", str::from_utf8(&e.attributes().nth(0).unwrap().unwrap().value).unwrap());
                 },
+                b"city" => { },
+                b"region" => { },
+                b"country" => { },
+                b"standard" => { },
                 _ => { }
             },
 
@@ -66,10 +70,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                 _ => { }
             },
 
-            // Event::Text(e) => {
-            //     println!("text: {}", str::from_utf8(&e.unescaped()?)?);
-            // },
-
             Event::Eof => break,
 
             _ => { },
@@ -79,22 +79,3 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
-
-// fn main() {
-//     let text = std::fs::read_to_string(std::env::args().nth(1).unwrap()).unwrap();
-//     let doc = roxmltree::Document::parse(&text).unwrap();
-
-//     let mut elements = 0;
-
-//     for node in doc.root().descendants().filter(|n| n.is_element()) {
-//         elements += 1;
-//         println!("Element: {:?}, Id: {:?}",node.tag_name(), node.attribute("id").unwrap_or("None"));
-
-//         if elements == 10 {
-//             break;
-//         }
-
-//     }
-
-//     println!("Elements: {}", elements);
-// }
