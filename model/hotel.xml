@@ -1,0 +1,75 @@
+<hotels>
+  <hotel id="33495" tomid="0" mark="">
+    <params>
+      <name>4 You Hotel Apartments</name>
+      <basichotel id="0"></basichotel>
+      <city id="1275">Metamorfosi</city>
+      <zip>63088</zip>
+      <street>Metamorfosi</street>
+      <region id="241">Chalkidiki/ Riwiera Olimpijska</region>
+      <country id="34">Grecja</country>
+      <giata></giata>
+      <seasontypeid>27</seasontypeid>
+      <standard>3</standard>
+      <standard_official>3</standard_official>
+      <seasontypename>Lato 2021</seasontypename>
+      <categoryname>Pobyt [za dzień] / MTS</categoryname>
+      <minage>0</minage>
+      <types>
+        <type>2</type>
+      </types>
+    </params>
+
+    <descriptions>
+      <description>
+        <label>UWAGA</label>
+
+        <body>&lt;p&gt;W związku ze zmianą przepisów dotyczących przekraczania granicy oraz przepisów sanitarnych w
+          poszczególnych krajach, sprawdź warunki w zakładce Bezpieczne Wakacje w kraju, do którego się udajesz na
+          https://eximtours.pl/nasze-k>
+      </description>
+    </descriptions>
+
+    <touristRoute></touristRoute>
+
+    <images>
+      <image hash="ceb2da9897f3a52299e8e465aed6dff1">
+        https://rw-agent.eximtours.pl/images/bv/hotel/33495/fe1d23ab03f0bd4ad55d7d4f6e0ab670_3.jpg
+      </image>
+    </images>
+
+    <imagesresize>
+      <image size="600x0">
+        https://rw-agent.eximtours.pl/images/bv/min/600x0/hotel/33495/fe1d23ab03f0bd4ad55d7d4f6e0ab670_3.jpg
+        </image>  
+    </imagesresize>
+
+    <clasifications>
+      <group id="8">
+        <name>Oznaczenie hoteli</name>
+        <clasificationlist>
+          <clasification id="114">
+            <name>Internet GRATIS</name>
+            <iconnumber></iconnumber>
+            <image> </image>
+          </clasification>
+          <clasification id="118">
+            <name>Piaszczysta plaża</name>
+            <iconnumber></iconnumber>
+            <image> </image>
+          </clasification>
+        </clasificationlist>
+      </group>
+    </clasifications>
+
+    <geolocation>
+      <latitude>40.23247</latitude>
+      <longitude>23.604362</longitude>
+    </geolocation>
+
+    <excludedfirmid></excludedfirmid>
+
+    <isanyfirmexcluded>false</isanyfirmexcluded>
+
+  </hotel>
+</hotels>

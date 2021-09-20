@@ -1,0 +1,86 @@
+<offers ts="2021-09-17 21:20:25">
+  <offer id="865629">
+    <hotel id="24313">Stella Di Mare Beach Resort &amp; SPA</hotel>
+    <hotelminage>0</hotelminage>
+    <hotelmaxage>0</hotelmaxage>
+    <minagenum>0</minagenum>
+    <maxinfnum>0</maxinfnum>
+    <infasperson>FALSE</infasperson>
+    <confs>
+      <c>0_0</c>
+      <c>0_0_17</c>
+      <c>0_0_50</c>
+      <c>0_0_2</c>
+      <c>1</c>
+      <c>0_0_6</c>
+      <c>0_0_6_6</c>
+      <c>0_0_6_6_6</c>
+      <c>0_0_6_6_6_6</c>
+      <c>0_0_17_6</c>
+      <c>0_0_17_6_6</c>
+      <c>0_0_17_6_6_6</c>
+      <c>0_0_17_6_6_6_6</c>
+      <c>0_0_50_6</c>
+      <c>0_0_50_6_6</c>
+      <c>0_0_50_6_6_6</c>
+      <c>0_0_50_6_6_6_6</c>
+      <c>0_0_2_6</c>
+      <c>0_0_2_6_6</c>
+      <c>0_0_2_6_6_6</c>
+      <c>0_0_2_6_6_6_6</c>
+      <c>1_6</c>
+    </confs>
+    <type name="stay">
+      <offer1 />
+      <offer2 />
+    </type>
+    <room id="708123" seasonid="37">
+      <roomname>DBL</roomname>
+      <workingname>ST/GV</workingname>
+      <roomtype>Standard [Garden view]</roomtype>
+      <roompricetype>PERSON</roompricetype>
+      <base_person_no>2</base_person_no>
+      <additional_bed_no>1</additional_bed_no>
+      <min_additional_bed_no>0</min_additional_bed_no>
+      <max_ad_no>1</max_ad_no>
+    </room>
+    <maintenance>AI</maintenance>
+    <maintenancename>All inclusive</maintenancename>
+    <transporttype id="1">Samolot</transporttype>
+
+    <optionalcomponents>
+      <component id="10566">
+        <description>WIZA [Egipt]</description>
+        <price>140</price>
+        <bcprice>140</bcprice>
+        <paidonthespotprice></paidonthespotprice>
+        <paidonthespotpricecurrency>USD</paidonthespotpricecurrency>
+        <paidonthespotbcprice></paidonthespotbcprice>
+        <age_from>0</age_from>
+        <age_to>0</age_to>
+        <pricetype>STAY</pricetype>
+        <pricetype>PERSON</pricetype>
+        <addtoallpersons>FALSE</addtoallpersons>
+        <fakeroom>FALSE</fakeroom>
+        <type>Optional trips</type>
+      </component>
+    </optionalcomponents>
+    <obligatorycomponents>
+      <component id="10585">
+        <description>OLD_Ubezpieczenie podstawowe- KL, NNW, bagażu, następstw chorób przewlekłych - ERGO Ubezpieczenia
+          Podróży</description>
+        <price>3</price>
+        <bcprice>3.00</bcprice>
+        <paidonthespotprice></paidonthespotprice>
+        <paidonthespotpricecurrency>EUR</paidonthespotpricecurrency>
+        <paidonthespotbcprice></paidonthespotbcprice>
+        <age_from>18</age_from>
+        <age_to>0</age_to>
+        <pricetype>DAY</pricetype>
+        <pricetype>PERSON</pricetype>
+        <fakeroom>FALSE</fakeroom>
+        <type>ubezpieczenie</type>
+        <promotion>FALSE</promotion>
+      </component>
+    </obligatorycomponents>
+  </offer>

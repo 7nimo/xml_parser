@@ -1,26 +1,20 @@
-use std::{
-    env,
-    error::Error,
-    fs::File,
-    io::BufReader,
-    str,
-};
+use std::{env, error::Error, fs::File, io::BufReader, str, time::Instant};
 
 use zip::ZipArchive;
 
 use encoding_rs_io::DecodeReaderBytes;
 
-use quick_xml::{Reader, events::{BytesStart, Event}};
+use quick_xml::{Reader, events::{Event}};
 
-const BUF_SIZE: usize = 4096; // 4kb at once
+const BUF_SIZE: usize = 1024; // 4kb at once
 
-struct Hotel {
-    id: u32,
-    region_id: u16,
-    country_id: u16,
-    city_id: u16,
-    standard: u8
-}
+// struct Hotel {
+//     id: u32,
+//     region_id: u16,
+//     country_id: u16,
+//     city_id: u16,
+//     standard: u8
+// }
 
 // fn read_id(ev: Event) -> &str {
 //     match ev {
@@ -42,40 +36,49 @@ fn main() -> Result<(), Box<dyn Error>> {
     if zip.len() != 1 {
         Err("expected one file in zip archive")?;
     }
-
+    
     let xmlfile = zip.by_index(0)?;
-    println!("file is {}, size {} bytes", xmlfile.name(), xmlfile.size());
     let xmlfile = BufReader::new(DecodeReaderBytes::new(xmlfile));
     let mut xmlfile = Reader::from_reader(xmlfile);
-
+    
     let mut buf = Vec::with_capacity(BUF_SIZE);
+    let now = Instant::now();
+    let end: Instant;
+    let mut count = 0;
+
     loop {
         match xmlfile.read_event(&mut buf)? {
             Event::Start(e) => match e.local_name() {
-
-                b"hotel" => {
+                b"offer" => {
+                    count+=1;
                     println!("id: {:?}", str::from_utf8(&e.attributes().nth(0).unwrap().unwrap().value).unwrap());
                 },
-                b"city" => { },
-                b"region" => { },
-                b"country" => { },
-                b"standard" => { },
+                // b"city" => { },
+                // b"region" => { },
+                // b"country" => { },
+                // b"standard" => { },
                 _ => { }
             },
 
-            Event::End(e) => match e.local_name() {
-                b"hotel" => {
-                    println!("end {}", str::from_utf8(e.local_name())?);
-                },
-                _ => { }
+            // Event::End(e) => match e.local_name() {
+            //     b"hotel" => {
+            //         println!("end {}", str::from_utf8(e.local_name())?);
+            //     },
+            //     _ => { }
+            // },
+
+            Event::Eof => 
+            {
+                end = Instant::now();
+                break;
             },
-
-            Event::Eof => break,
-
             _ => { },
         };
         buf.clear();
     }
+
+    println!("Found {} elements", &count);
+    println!("Finished at {:?}", end - now);
 
     Ok(())
 }

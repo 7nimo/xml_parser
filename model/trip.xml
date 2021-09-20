@@ -1,0 +1,57 @@
+<trips ts="2021-09-17 13:23:07">
+	<trip id="332854642">
+		<type>KAT</type>
+		<superoffer>FALSE</superoffer>
+		<offercode>
+			<![CDATA[Zima 2021/22]]>
+		</offercode>
+		<offerid>1117360</offerid>
+		<length>7</length>
+		<startdate>2021-11-02</startdate>
+		<enddate>2021-11-09</enddate>
+		<hoteltype name="stay" />
+		<transport>
+			<departure id="354552">
+				<type>flight</type>
+				<allotmentfree>*</allotmentfree>
+				<prices>
+					<baseprice>10245</baseprice>
+					<bcbaseprice>10245</bcbaseprice>
+					<historyprice>10245</historyprice>
+					<bchistoryprice>10245.00</bchistoryprice>
+
+					<roompricetype>PERSON</roompricetype>
+					<price id="6" pricetype="PERSON">
+						<amount>771</amount>
+						<bcamount>771</bcamount>
+
+					</price>
+					<price id="1" pricetype="PERSON">
+						<amount>12811</amount>
+						<bcamount>12811</bcamount>
+
+					</price>
+				</prices>
+
+				<obligatorycomponents>
+				</obligatorycomponents>
+				<optionalcomponents>
+				</optionalcomponents>
+				<arrival id="354553">
+					<type>flight</type>
+
+
+				</arrival>
+			</departure>
+		</transport>
+
+		<optionalcomponents></optionalcomponents>
+		<obligatorycomponents>
+			<component id="15086">
+				<price>0</price>
+				<bcprice>0</bcprice>
+				<promotion>TRUE</promotion>
+			</component>
+		</obligatorycomponents>
+	</trip>
+</trips>
